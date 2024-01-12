@@ -1,0 +1,22 @@
+import React from "react";
+import App from "./components/App/App";
+import Timer from "./components/Timer/Timer";
+import TimerButton from "./components/TimerButton/TimerButton";
+import { shallow } from "enzyme";
+
+describe("rendering components", () => {
+    it("renders App component without crashing", () => {
+        shallow(<App />); 
+    })
+
+    it("renders App component container without crashing", () => {
+const wrapper = shallow(<App />);
+const container = (
+    className="app-container">
+    <Timer />
+  );
+  expect(wrapper.contains(container)).toEqual(true);
+
+}) 
+
+})
